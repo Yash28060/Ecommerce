@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </head>
+  <body>
+    <div class="home_pg bg-[#FED7BA]">
+      <nav
+        class="flex items-center justify-between px-4 py-4 text-xl"
+      >
+        <div class="hidden md:block">
+          <a href="#" class="text-white hover:text-gray-600 mr-4">Home</a>
+          <a href="#" class="text-white hover:text-gray-600 mr-4">Shop</a>
+          <a href="#" class="text-white hover:text-gray-600 mr-4">Blog</a>
+          
+        </div>
+        <div class="flex items-center justify-center">
+          <!-- Logo in the middle -->
+          <div class="">
+            <img src="Img_Vid/logoimg.png" alt="Logo" class="h-16"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <button
+            id="menuBtn"
+            class="block md:hidden text-white focus:outline-none relative z-50"
+            onclick="toggleMenu()"
+          >
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          
+          <div class="hidden md:flex items-center">
+            <!-- Add buttons for cart, like, and profile -->
+            <button class="text-white hover:text-red-500 mr-4 text-2xl">
+              <!-- Cart icon -->
+              <i class="fa-solid fa-heart"></i>
+            </button>
+            <button class="text-red-300 hover:text-blue-500 mr-4 text-2xl">
+              <!-- Like icon -->
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <button class="text-purple-500 hover:text-gray-300 text-2xl">
+              <!-- Profile icon -->
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 hidden"
+        id="menu"
+      >
+        <div
+          class="flex flex-col items-center justify-center h-full bg-[#FED7BA]"
+        >
+          <a href="index.html" class="text-white hover:text-gray-600 my-4"
+            >Home</a
+          >
+          <a href="#" class="text-white hover:text-gray-600 my-4">Shop</a>
+          <a href="#" class="text-white hover:text-gray-600 my-4">Blog</a>
+        </div>
+      </div>
+
+      <div class="first_pg h-screen w-full ">
+        <div class="images h-full w-full flex justify-between gap-20 px-20">
+          <img src="Img_Vid/img1.jpg" alt="" class="h-full w-1/2" />
+          <div class="images1 w-1/2 h-full space-y-10">
+            <img src="Img_Vid/img3.png" alt="" class="h-[47%] w-full mb-auto" />
+            <img src="Img_Vid/img2.jpg" alt="" class="h-[48%] w-full" />
+          </div>
+        </div>
+      </div>
+      <div class="second_pg h-screen w-full drop-shadow-lg ">
+        <div class="text text-center p-16 ">
+          <h1 class="text-6xl text-red-800">Browse By Category</h1>
+          <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">
+            Discover elegance at your fingertips
+          </h3>
+        </div>
+        <div class="flex justify-around w-full bg-white p-20">
+          <div class="sub-container1 text-center overflow-hidden">
+            <h1 class="text-4xl mb-5">Crystals</h1>
+            <div class="flex ">
+              <span>
+              <img src="/Img_Vid/gemstone.png" alt="" />
+              <p class="text-xl">GEMSTONE</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/diamond.png" alt="" />
+              <p class="text-xl">DIAMOND</p>
+            </div>
+          </span>
+          </div>
+          <div class="sub-container2 text-center">
+            <h1 class="text-4xl mb-5">Carats</h1>
+            <div class="flex">
+              <span>
+              <img src="/Img_Vid/gold.png" alt="" />
+              <p class="text-xl">GOLD</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/platinum.png" alt="" />
+              <p class="text-xl">PLATINUM</p>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="third_pg h-full w-full">
+        <div class="text text-center">
+        <h1 class="text-6xl text-red-800">Best Sellers</h1>
+        <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">Timeless elegance meets contemporary style</h3>
+        <img src = "/Img_Vid/Line-Design.svg" alt="My Happy SVG" class="mt-[-20px]"/>
+      </div>
+      <div class=" flex items-center justify-around ">
+      <div class="c1 grid grid-cols-4 grid-rows-2 gap-4 text-center h-[100vh]  ">
+        <span>
+          <img src="/Img_Vid/coins.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Coins</p>
+        </span>
+        <span>
+          <img src="/Img_Vid/earrings.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Ear Rings</p>
+        </span>
+        <span>
+          <img src="/Img_Vid/bracelet.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Bracelet</p>
+        </span>
+        <span>
+          <img src="/Img_Vid/bangles.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Bangles</p>
+        </span>
+        <span>
+          <img src="/Img_Vid/necklace.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Necklace</p>
+        </span>
+        <span>
+          <img src="/Img_Vid/nose-pins.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Nose Pins</p>
+        </span>
+        <span>
+          <img src="/Img_Vid/rings.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Rings</p>
+        </span>
+        <span>
+          <img src="/Img_Vid/pendent.png" alt="">
+          <p class="text-lg text-red-900 font-bold">Pendent</p>
+        </span>
+      </div>
+      </div>
+      </div>
+      <div class="fourth_pg relative">
+        <div class="text text-center relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
+          <h1 class="text-6xl text-red-800">Bridal Jewelry Special</h1>
+          <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">Be the bride you always dreamt of</h3>
+          <img src="/Img_Vid/Line-Design.svg" alt="My Happy SVG" class="mt-[-20px]" />
+        </div>
+        <div class="flex items-center justify-around relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
+          <div class="blog1 grid grid-cols-3 grid-rows-1 gap-4 text-center h-[100vh]">
+            <span>
+              <img src="/Img_Vid/enchanting.png" alt="" class="bg-red-900 p-14">
+              <p class="text-2xl mt-4">Enchanting</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/trendsetter.png" alt="" class="bg-red-900 p-14">
+              <p class="text-2xl mt-4">Trendsetter</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/dazzling.png" alt="" class="bg-red-900 p-14">
+              <p class="text-2xl mt-4">Dazzling</p>
+            </span>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-[#CCC6C6CC] " ></div>
+      </div>
+      <div class="fifth_pg w-full h-[70vh] text-center justify-center">
+        <img src="Img_Vid/gifts.png" alt="" class="p-8">
+        <p class=" text-center relative top-[-50%] text-6xl text-white font-bold">Gift Cards</p>
+      </div>
+      <div class="sixth_pg relative">
+        <div class="text text-center relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
+          <h1 class="text-6xl text-red-800">Shop By Gender</h1>
+          <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">First-class jewelry for the first-class Men, Women & Children.</h3>
+          <img src="/Img_Vid/Line-Design.svg" alt="My Happy SVG" class="mt-[-20px]" />
+        </div>
+        <div class="flex items-center justify-around relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
+          <div class="blog1 grid grid-cols-3 grid-rows-1 gap-4 text-center h-[65vh]">
+            <span class="bg-[#D9D9D9] h-fit pb-4">
+              <img src="/Img_Vid/men.png" alt="">
+              <p class="text-2xl mt-4 font-bold">Men</p>
+            </span>
+            <span class="bg-[#D9D9D9] h-fit pb-4">
+              <img src="/Img_Vid/women.png" alt="">
+              <p class="text-2xl mt-4 font-bold">Women</p>
+            </span>
+            <span class="bg-[#D9D9D9] h-fit pb-4">
+              <img src="/Img_Vid/children.png" alt="" >
+              <p class="text-2xl mt-4 font-bold">Children</p>
+            </span>
+          </div>
+        </div>
+      </div>  
+      <div class="seventh_pg h-fit w-full p-10 ">
+        <img src="Img_Vid/grp.png" alt="" class="px-20 h-[full]">
+      </div>
+      <div class="eight_pg h-screen w-full bg-red-900">
+        <div class="images h-full w-full flex justify-between gap-20 p-20">
+          <div class="images1 w-1/2 h-full space-y-10">
+            <img src="Img_Vid/Birthday 1.png" alt="" class="h-[47%] w-full mb-auto" />
+            <img src="Img_Vid/anniversary 1.png" alt="" class="h-[48%] w-full" />
+          </div>
+          <img src="Img_Vid/Personalized 1.png" alt="" class="h-full w-1/2" />
+        </div>
+      </div>
+      <div class="footer h-full  w-full bg-[#D9D9D9]">
+        <div class="container grid grid-cols-4 grid-rows-1 gap-4 items-center justify-between m-auto  pt-5">
+          <div class="address">
+            <h1 class=" text-2xl text-red-900">Address</h1>
+            <p>Crystal & Carats</p>
+            <p>Plot No 44, 45, Street Number 14,</p>
+            <p>Marol MIDC Industry Estate,</p>
+            <p>Andheri East, Mumbai-400093</p>
+          </div>
+          <div class="help">
+            <h1 class=" text-2xl text-red-900">Help & Info</h1>
+            <p>About Crystal & Carats</p>
+            <p>Careers</p>
+            <p>Blogs</p>
+            <p>FAQs</p>
+          </div>
+          <div class="contact">
+            <h1 class=" text-2xl text-red-900">Contact Us</h1>
+            <span>
+
+              <p>1809-908-5647</p>
+            </span>
+            <span>
+
+              <p>Get in touch</p>
+            </span>
+            <span>
+
+              <p>Chat with us</p>
+            </span>
+
+
+          </div>
+          <div class="links">
+            <h1 class=" text-2xl text-red-900">Useful links</h1>
+            <p><a href="#">Privacy Policy</a></p>
+            <p>Terms of Use</p>
+            <p>Payment Issues</p>
+            <p>Net Banking</p>
+            <p>Custom Jewellry</p>
+
+          </div>
+          <div class="map relative">
+            <h1 class="text-2xl text-red-900">Location</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.768876072758!2d77.7064133150817!3d28.98446198231592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e0d9e0d8e0d%3A0x4d8e0d8e0d8e0d8e!2sMeerut%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635361231234!5m2!1sen!2sin" width="350" height="350" class=" border-4 border-slate-400 " allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+        
+        <div class="socialLinks flex justify-center text-center gap-10 items-center">
+          <h1 class="text-2xl text-red-800 font-bold">Follow Us on:</h1>
+          <a class="fb relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-blue-700  " href="#">
+            <i class="fa-brands fa-facebook  inset-0  hover:scale-125"></i>
+          </a>
+          <a class="insta relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-red-700 " href="#">
+            <i class="fa-brands fa-youtube inset-0  hover:scale-125"></i>
+          </a>
+          <a class="twitter relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-white " href="#">
+            <i class="fa-brands fa-x-twitter inset-0  hover:scale-125"></i>
+          </a>
+          <a class="linkedin relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-green-600 " href="#">
+            <i class="fa-brands fa-whatsapp inset-0  hover:scale-125"></i>
+          </a>
+        </div>
+        <div class="footer-bottom justify-center text-center bg-[#FED7BA] text-red-800 text-xl py-5 px-20">
+          <p>&copy; 2024 Fitness Club. All Rights Reserved</p>
+  </div> 
+
+      </div>
+
+    </div>
+    <script src="script/index.js"></script>
+  </body>
+</html>
