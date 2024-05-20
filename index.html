@@ -4,45 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./dist/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
   <body>
     <div class="home_pg bg-[#FED7BA]">
-      <nav
-        class="flex items-center justify-between px-4 py-4 text-xl"
-      >
+      <nav class="flex items-center justify-between px-4 py-4 text-xl">
+        <button
+          id="menuBtn"
+          class="block md:hidden text-white drop-shadow-lg focus:outline-none relative z-50"
+          onclick="toggleMenu()"
+        >
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
         <div class="hidden md:block">
           <a href="#" class="text-white hover:text-gray-600 mr-4">Home</a>
           <a href="#" class="text-white hover:text-gray-600 mr-4">Shop</a>
           <a href="#" class="text-white hover:text-gray-600 mr-4">Blog</a>
-          
         </div>
         <div class="flex items-center justify-center">
           <!-- Logo in the middle -->
           <div class="">
-            <img src="Img_Vid/logoimg.png" alt="Logo" class="h-16"
-            />
+            <img src="Img_Vid/logoimg.png" alt="Logo" class="h-16" />
           </div>
         </div>
 
         <div class="flex items-center">
-          <button
-            id="menuBtn"
-            class="block md:hidden text-white focus:outline-none relative z-50"
-            onclick="toggleMenu()"
-          >
-            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-              <path
-                d="M4 6h16M4 12h16M4 18h16"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-          
-          <div class="hidden md:flex items-center">
+          <div class="flex items-center">
             <!-- Add buttons for cart, like, and profile -->
             <button class="text-white hover:text-red-500 mr-4 text-2xl">
               <!-- Cart icon -->
@@ -52,21 +50,24 @@
               <!-- Like icon -->
               <i class="fa-solid fa-cart-shopping"></i>
             </button>
-            <button class="text-purple-500 hover:text-gray-300 text-2xl">
+            <button
+              class="join btn-open-popup text-purple-500 hover:text-gray-300 text-2xl"
+              onclick="togglePopup()"
+            >
               <!-- Profile icon -->
               <i class="fas fa-user"></i>
             </button>
           </div>
         </div>
       </nav>
-      
+
       <!-- Mobile menu -->
       <div
-        class="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 hidden"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 hidden"
         id="menu"
       >
         <div
-          class="flex flex-col items-center justify-center h-full bg-[#FED7BA]"
+          class="flex flex-col items-center justify-center h-full text-4xl p-20 gap-10"
         >
           <a href="index.html" class="text-white hover:text-gray-600 my-4"
             >Home</a
@@ -76,7 +77,126 @@
         </div>
       </div>
 
-      <div class="first_pg h-screen w-full ">
+      <!-- Login form starts here -->
+      <div
+        id="popupOverlay"
+        class="fixed z-50 inset-0 bg-black bg-opacity-60 flex justify-center items-center opacity-0 scale-75 transform transition-all duration-300 pointer-events-none"
+      >
+        <div
+          class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 text-center"
+        >
+          <button
+            id="menuBtn"
+            class="block right-[26%] text-gray-600 text-4xl fixed z-50 hover:opacity-85"
+            onclick="togglePopup()"
+          >
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+          <div class="py-16">
+            <div
+              class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl"
+            >
+              <div
+                class="bg-cover bg-center hidden lg:block lg:w-1/2"
+                style="background-image: url('Img_Vid/form_img.png')"
+              ></div>
+              <div class="w-full p-6 lg:w-1/2">
+                <div class="heading flex justify-around mb-5">
+                  <h2 id="sign_up" class="text-2xl font-semibold text-gray-700 text-center cursor-pointer" onclick="toggleForms('signup')">
+                    Sign Up
+                  </h2>
+                  <h2 id="log_in" class="text-2xl font-semibold text-gray-700 text-center cursor-pointer" onclick="toggleForms('login')">
+                    Log in
+                  </h2>
+                </div>
+                <hr class=" h-8 w-full ">
+                <div id="login_form" class="login">
+                  <a href="#" class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
+                    <div class="px-4 py-3">
+                      <svg class="h-6 w-6" viewBox="0 0 40 40">
+                        <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
+                        <path d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z" fill="#FF3D00" />
+                        <path d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z" fill="#4CAF50" />
+                        <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2" />
+                      </svg>
+                    </div>
+                    <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">
+                      Sign in with Google
+                    </h1>
+                  </a>
+                  <div class="mt-4 flex items-center justify-between">
+                    <span class="border-b w-1/5 lg:w-1/4"></span>
+                    <a href="#" class="text-xs text-center text-gray-500 uppercase">or login with email</a>
+                    <span class="border-b w-1/5 lg:w-1/4"></span>
+                  </div>
+                  <div class="mt-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                    <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" />
+                  </div>
+                  <div class="mt-4">
+                    <div class="flex justify-between">
+                      <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                      <a href="#" class="text-xs text-gray-500 hover:text-red-600 underline decoration-indigo-500 underline-offset-4">Forget Password?</a>
+                    </div>
+                    <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" />
+                  </div>
+                  <div class="mt-8">
+                    <button class="bg-gradient-to-r from-purple-600 to-blue-400 text-white font-bold py-2 px-4 w-full rounded hover:opacity-85">
+                      Login
+                    </button>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between">
+                    <span class="border-b w-1/5 md:w-1/4"></span>
+                    <a href="#" class="text-xs underline decoration-indigo-500 underline-offset-4 hover:text-red-600 text-gray-500 uppercase" onclick="toggleForms('signup')">or sign up</a>
+                    <span class="border-b w-1/5 md:w-1/4"></span>
+                  </div>
+                </div>
+                <div id="signup_form" class="signup">
+                  <form class="max-w-md mx-auto">
+                    <div class="grid md:grid-cols-2 md:gap-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none  border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating_first_name" class="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
+                      </div>
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating_last_name" class="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+                      </div>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_email" class="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_password" class="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2  appearance-none border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_repeat_password" class="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_phone" class="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group flex">
+                      <input type="checkbox" name="terms" id="terms" required>
+                      <p class="ml-2">I agree to the Terms of use and Privacy Statement</p>
+                    </div>
+                    <button type="submit" class="bg-gradient-to-r from-purple-600 to-blue-400 text-white font-bold py-2 px-4 w-full rounded hover:opacity-85">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>           
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Login form ends here -->
+
+      <div class="first_pg h-screen w-full">
         <div class="images h-full w-full flex justify-between gap-20 px-20">
           <img src="Img_Vid/img1.jpg" alt="" class="h-full w-1/2" />
           <div class="images1 w-1/2 h-full space-y-10">
@@ -85,217 +205,282 @@
           </div>
         </div>
       </div>
-      <div class="second_pg h-screen w-full drop-shadow-lg ">
-        <div class="text text-center p-16 ">
+      <div class="second_pg h-screen w-full">
+        <div class="text text-center p-16">
           <h1 class="text-6xl text-red-800">Browse By Category</h1>
-          <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">
+          <h3 class="text-3xl text-gray-500 mt-5">
             Discover elegance at your fingertips
           </h3>
         </div>
         <div class="flex justify-around w-full bg-white p-20">
           <div class="sub-container1 text-center overflow-hidden">
             <h1 class="text-4xl mb-5">Crystals</h1>
-            <div class="flex ">
+            <div class="flex">
               <span>
-              <img src="/Img_Vid/gemstone.png" alt="" />
-              <p class="text-xl">GEMSTONE</p>
-            </span>
-            <span>
-              <img src="/Img_Vid/diamond.png" alt="" />
-              <p class="text-xl">DIAMOND</p>
+                <img src="/Img_Vid/gemstone.png" alt="" />
+                <p class="text-xl">GEMSTONE</p>
+              </span>
+              <span>
+                <img src="/Img_Vid/diamond.png" alt="" />
+                <p class="text-xl">DIAMOND</p>
+              </span>
             </div>
-          </span>
           </div>
           <div class="sub-container2 text-center">
             <h1 class="text-4xl mb-5">Carats</h1>
             <div class="flex">
               <span>
-              <img src="/Img_Vid/gold.png" alt="" />
-              <p class="text-xl">GOLD</p>
-            </span>
-            <span>
-              <img src="/Img_Vid/platinum.png" alt="" />
-              <p class="text-xl">PLATINUM</p>
-            </span>
+                <img src="/Img_Vid/gold.png" alt="" />
+                <p class="text-xl">GOLD</p>
+              </span>
+              <span>
+                <img src="/Img_Vid/platinum.png" alt="" />
+                <p class="text-xl">PLATINUM</p>
+              </span>
             </div>
           </div>
         </div>
       </div>
       <div class="third_pg h-full w-full">
         <div class="text text-center">
-        <h1 class="text-6xl text-red-800">Best Sellers</h1>
-        <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">Timeless elegance meets contemporary style</h3>
-        <img src = "/Img_Vid/Line-Design.svg" alt="My Happy SVG" class="mt-[-20px]"/>
-      </div>
-      <div class=" flex items-center justify-around ">
-      <div class="c1 grid grid-cols-4 grid-rows-2 gap-4 text-center h-[100vh]  ">
-        <span>
-          <img src="/Img_Vid/coins.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Coins</p>
-        </span>
-        <span>
-          <img src="/Img_Vid/earrings.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Ear Rings</p>
-        </span>
-        <span>
-          <img src="/Img_Vid/bracelet.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Bracelet</p>
-        </span>
-        <span>
-          <img src="/Img_Vid/bangles.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Bangles</p>
-        </span>
-        <span>
-          <img src="/Img_Vid/necklace.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Necklace</p>
-        </span>
-        <span>
-          <img src="/Img_Vid/nose-pins.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Nose Pins</p>
-        </span>
-        <span>
-          <img src="/Img_Vid/rings.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Rings</p>
-        </span>
-        <span>
-          <img src="/Img_Vid/pendent.png" alt="">
-          <p class="text-lg text-red-900 font-bold">Pendent</p>
-        </span>
-      </div>
-      </div>
+          <h1 class="text-6xl text-red-800">Best Sellers</h1>
+          <h3 class="text-3xl text-gray-500 mt-5">
+            Timeless elegance meets contemporary style
+          </h3>
+          <img
+            src="/Img_Vid/Line-Design.svg"
+            alt="My Happy SVG"
+            class="mt-[-20px]"
+          />
+        </div>
+        <div class="flex items-center justify-around">
+          <div
+            class="c1 grid grid-cols-4 grid-rows-2 gap-4 text-center h-[100vh]"
+          >
+            <span>
+              <img src="/Img_Vid/coins.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Coins</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/earrings.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Ear Rings</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/bracelet.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Bracelet</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/bangles.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Bangles</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/necklace.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Necklace</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/nose-pins.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Nose Pins</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/rings.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Rings</p>
+            </span>
+            <span>
+              <img src="/Img_Vid/pendent.png" alt="" />
+              <p class="text-lg text-red-900 font-bold">Pendent</p>
+            </span>
+          </div>
+        </div>
       </div>
       <div class="fourth_pg relative">
-        <div class="text text-center relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
+        <div class="text text-center relative z-10">
+          <!-- Added 'relative' and 'z-10' classes -->
           <h1 class="text-6xl text-red-800">Bridal Jewelry Special</h1>
-          <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">Be the bride you always dreamt of</h3>
-          <img src="/Img_Vid/Line-Design.svg" alt="My Happy SVG" class="mt-[-20px]" />
+          <h3 class="text-3xl text-gray-500 mt-5">
+            Be the bride you always dreamt of
+          </h3>
+          <img
+            src="/Img_Vid/Line-Design.svg"
+            alt="My Happy SVG"
+            class="mt-[-20px]"
+          />
         </div>
-        <div class="flex items-center justify-around relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
-          <div class="blog1 grid grid-cols-3 grid-rows-1 gap-4 text-center h-[100vh]">
+        <div class="flex items-center justify-around relative z-10">
+          <!-- Added 'relative' and 'z-10' classes -->
+          <div
+            class="blog1 grid grid-cols-3 grid-rows-1 gap-4 text-center h-[100vh]"
+          >
             <span>
-              <img src="/Img_Vid/enchanting.png" alt="" class="bg-red-900 p-14">
+              <img
+                src="/Img_Vid/enchanting.png"
+                alt=""
+                class="bg-red-900 p-14"
+              />
               <p class="text-2xl mt-4">Enchanting</p>
             </span>
             <span>
-              <img src="/Img_Vid/trendsetter.png" alt="" class="bg-red-900 p-14">
+              <img
+                src="/Img_Vid/trendsetter.png"
+                alt=""
+                class="bg-red-900 p-14"
+              />
               <p class="text-2xl mt-4">Trendsetter</p>
             </span>
             <span>
-              <img src="/Img_Vid/dazzling.png" alt="" class="bg-red-900 p-14">
+              <img src="/Img_Vid/dazzling.png" alt="" class="bg-red-900 p-14" />
               <p class="text-2xl mt-4">Dazzling</p>
             </span>
           </div>
         </div>
-        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-[#CCC6C6CC] " ></div>
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-[#CCC6C6CC]"></div>
       </div>
       <div class="fifth_pg w-full h-[70vh] text-center justify-center">
-        <img src="Img_Vid/gifts.png" alt="" class="p-8">
-        <p class=" text-center relative top-[-50%] text-6xl text-white font-bold">Gift Cards</p>
+        <img src="Img_Vid/gifts.png" alt="" class="p-8" />
+        <p
+          class="text-center relative top-[-50%] text-6xl text-white font-bold"
+        >
+          Gift Cards
+        </p>
       </div>
       <div class="sixth_pg relative">
-        <div class="text text-center relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
+        <div class="text text-center relative z-10">
+          <!-- Added 'relative' and 'z-10' classes -->
           <h1 class="text-6xl text-red-800">Shop By Gender</h1>
-          <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">First-class jewelry for the first-class Men, Women & Children.</h3>
-          <img src="/Img_Vid/Line-Design.svg" alt="My Happy SVG" class="mt-[-20px]" />
+          <h3 class="text-3xl text-gray-500 drop-shadow-2xl mt-5">
+            First-class jewelry for the first-class Men, Women & Children.
+          </h3>
+          <img
+            src="/Img_Vid/Line-Design.svg"
+            alt="My Happy SVG"
+            class="mt-[-20px]"
+          />
         </div>
-        <div class="flex items-center justify-around relative z-10"> <!-- Added 'relative' and 'z-10' classes -->
-          <div class="blog1 grid grid-cols-3 grid-rows-1 gap-4 text-center h-[65vh]">
+        <div class="flex items-center justify-around relative z-10">
+          <!-- Added 'relative' and 'z-10' classes -->
+          <div
+            class="blog1 grid grid-cols-3 grid-rows-1 gap-4 text-center h-[65vh]"
+          >
             <span class="bg-[#D9D9D9] h-fit pb-4">
-              <img src="/Img_Vid/men.png" alt="">
+              <img src="/Img_Vid/men.png" alt="" />
               <p class="text-2xl mt-4 font-bold">Men</p>
             </span>
             <span class="bg-[#D9D9D9] h-fit pb-4">
-              <img src="/Img_Vid/women.png" alt="">
+              <img src="/Img_Vid/women.png" alt="" />
               <p class="text-2xl mt-4 font-bold">Women</p>
             </span>
             <span class="bg-[#D9D9D9] h-fit pb-4">
-              <img src="/Img_Vid/children.png" alt="" >
+              <img src="/Img_Vid/children.png" alt="" />
               <p class="text-2xl mt-4 font-bold">Children</p>
             </span>
           </div>
         </div>
-      </div>  
-      <div class="seventh_pg h-fit w-full p-10 ">
-        <img src="Img_Vid/grp.png" alt="" class="px-20 h-[full]">
+      </div>
+      <div class="seventh_pg h-fit w-full p-10">
+        <img src="Img_Vid/grp.png" alt="" class="px-20 h-[full]" />
       </div>
       <div class="eight_pg h-screen w-full bg-red-900">
         <div class="images h-full w-full flex justify-between gap-20 p-20">
           <div class="images1 w-1/2 h-full space-y-10">
-            <img src="Img_Vid/Birthday 1.png" alt="" class="h-[47%] w-full mb-auto" />
-            <img src="Img_Vid/anniversary 1.png" alt="" class="h-[48%] w-full" />
+            <img
+              src="Img_Vid/Birthday 1.png"
+              alt=""
+              class="h-[47%] w-full mb-auto"
+            />
+            <img
+              src="Img_Vid/anniversary 1.png"
+              alt=""
+              class="h-[48%] w-full"
+            />
           </div>
           <img src="Img_Vid/Personalized 1.png" alt="" class="h-full w-1/2" />
         </div>
       </div>
-      <div class="footer h-full  w-full bg-[#D9D9D9]">
-        <div class="container grid grid-cols-4 grid-rows-1 gap-4 items-center justify-between m-auto  pt-5">
+      <div class="footer h-full w-full bg-[#D9D9D9]">
+        <div
+          class="container grid grid-cols-4 grid-rows-1 gap-4 items-center justify-between m-auto pt-5"
+        >
           <div class="address">
-            <h1 class=" text-2xl text-red-900">Address</h1>
+            <h1 class="text-2xl text-red-900">Address</h1>
             <p>Crystal & Carats</p>
             <p>Plot No 44, 45, Street Number 14,</p>
             <p>Marol MIDC Industry Estate,</p>
             <p>Andheri East, Mumbai-400093</p>
           </div>
           <div class="help">
-            <h1 class=" text-2xl text-red-900">Help & Info</h1>
+            <h1 class="text-2xl text-red-900">Help & Info</h1>
             <p>About Crystal & Carats</p>
             <p>Careers</p>
             <p>Blogs</p>
             <p>FAQs</p>
           </div>
           <div class="contact">
-            <h1 class=" text-2xl text-red-900">Contact Us</h1>
+            <h1 class="text-2xl text-red-900">Contact Us</h1>
             <span>
-
               <p>1809-908-5647</p>
             </span>
             <span>
-
               <p>Get in touch</p>
             </span>
             <span>
-
               <p>Chat with us</p>
             </span>
-
-
           </div>
           <div class="links">
-            <h1 class=" text-2xl text-red-900">Useful links</h1>
+            <h1 class="text-2xl text-red-900">Useful links</h1>
             <p><a href="#">Privacy Policy</a></p>
             <p>Terms of Use</p>
             <p>Payment Issues</p>
             <p>Net Banking</p>
             <p>Custom Jewellry</p>
-
           </div>
           <div class="map relative">
             <h1 class="text-2xl text-red-900">Location</h1>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.768876072758!2d77.7064133150817!3d28.98446198231592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e0d9e0d8e0d%3A0x4d8e0d8e0d8e0d8e!2sMeerut%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635361231234!5m2!1sen!2sin" width="350" height="350" class=" border-4 border-slate-400 " allowfullscreen="" loading="lazy"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.768876072758!2d77.7064133150817!3d28.98446198231592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e0d9e0d8e0d%3A0x4d8e0d8e0d8e0d8e!2sMeerut%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635361231234!5m2!1sen!2sin"
+              width="350"
+              height="350"
+              class="border-4 border-slate-400"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
-        
-        <div class="socialLinks flex justify-center text-center gap-10 items-center">
+
+        <div
+          class="socialLinks flex justify-center text-center gap-10 items-center"
+        >
           <h1 class="text-2xl text-red-800 font-bold">Follow Us on:</h1>
-          <a class="fb relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-blue-700  " href="#">
-            <i class="fa-brands fa-facebook  inset-0  hover:scale-125"></i>
+          <a
+            class="fb relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-blue-700"
+            href="#"
+          >
+            <i class="fa-brands fa-facebook inset-0 hover:scale-125"></i>
           </a>
-          <a class="insta relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-red-700 " href="#">
-            <i class="fa-brands fa-youtube inset-0  hover:scale-125"></i>
+          <a
+            class="insta relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-red-700"
+            href="#"
+          >
+            <i class="fa-brands fa-youtube inset-0 hover:scale-125"></i>
           </a>
-          <a class="twitter relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-white " href="#">
-            <i class="fa-brands fa-x-twitter inset-0  hover:scale-125"></i>
+          <a
+            class="twitter relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-white"
+            href="#"
+          >
+            <i class="fa-brands fa-x-twitter inset-0 hover:scale-125"></i>
           </a>
-          <a class="linkedin relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-green-600 " href="#">
-            <i class="fa-brands fa-whatsapp inset-0  hover:scale-125"></i>
+          <a
+            class="linkedin relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-green-600"
+            href="#"
+          >
+            <i class="fa-brands fa-whatsapp inset-0 hover:scale-125"></i>
           </a>
         </div>
-        <div class="footer-bottom justify-center text-center bg-[#FED7BA] text-red-800 text-xl py-5 px-20">
+        <div
+          class="footer-bottom justify-center text-center bg-[#FED7BA] text-red-800 text-xl py-5 px-20"
+        >
           <p>&copy; 2024 Fitness Club. All Rights Reserved</p>
-  </div> 
-
+        </div>
       </div>
-
     </div>
     <script src="script/index.js"></script>
   </body>
