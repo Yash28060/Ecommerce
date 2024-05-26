@@ -50,9 +50,71 @@ function toggleForms(formType) {
   }
 }
 
+// carousel starts here //
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.add('hidden'));
+  slides[index].classList.remove('hidden');
+}
+
+function showNextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+function showPrevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+function startCarousel() {
+  showSlide(currentIndex);
+  setInterval(showNextSlide, 4000);
+}
+
+// carousel for products starts here //
+
+let initialIndex = 0;
+const products = document.querySelectorAll('.prod');
+const productsPerPage = 4;
+
+function showProducts(index) {
+  products.forEach((prod, i) => {
+    prod.classList.add('hidden');
+    if (i >= index && i < index + productsPerPage) {
+      prod.classList.remove('hidden');
+    }
+  });
+}
+
+function showRightSlide() {
+  initialIndex = (initialIndex + 1) % products.length;
+  showProducts(initialIndex);
+}
+
+function showLeftSlide() {
+  initialIndex = (initialIndex - 1 + products.length) % products.length;
+  showProducts(initialIndex);
+}
+
+function showProd() {
+  showProducts(initialIndex);
+  setInterval(showRightSlide, 4000);
+}
+
+showProd();
+
+
+
+window.addEventListener('load', startCarousel);
+
 // Default to showing login form
 toggleForms('login');
 
 window.onload = function() {
-  setTimeout(togglePopup, 1000); // 5000 milliseconds = 5 seconds
+  setTimeout(togglePopup, 4000); // 5000 milliseconds = 5 seconds
 };

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>shop</title>
+  </head>
+  <body>
+    <div class="class_pg bg-[#FED7BA]">
+      <nav class="flex items-center justify-between px-4 py-4 text-xl">
+        <button
+          id="menuBtn"
+          class="block md:hidden text-white drop-shadow-lg focus:outline-none relative z-50"
+          onclick="toggleMenu()"
+        >
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="hidden md:block">
+          <a href="index.html" class="text-white hover:text-gray-600 mr-4"
+            >Home</a
+          >
+          <a href="shop.html" class="text-white hover:text-gray-600 mr-4"
+            >Shop</a
+          >
+          <a href="#" class="text-white hover:text-gray-600 mr-4">Blog</a>
+        </div>
+        <div class="flex items-center justify-center">
+          <!-- Logo in the middle -->
+          <div class="">
+            <img src="Img_Vid/logoimg.png" alt="Logo" class="h-16" />
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <!-- Add buttons for cart, like, and profile -->
+            <button class="text-white hover:text-red-500 mr-4 text-2xl">
+              <!-- Cart icon -->
+              <i class="fa-solid fa-heart"></i>
+            </button>
+            <button class="text-red-300 hover:text-blue-500 mr-4 text-2xl">
+              <!-- Like icon -->
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <button
+              class="join btn-open-popup text-purple-500 hover:text-gray-300 text-2xl"
+              onclick="togglePopup()"
+            >
+              <!-- Profile icon -->
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 hidden"
+        id="menu"
+      >
+        <div
+          class="flex flex-col items-center justify-center h-full text-4xl p-20 gap-10"
+        >
+          <a href="index.html" class="text-white hover:text-gray-600 my-4"
+            >Home</a
+          >
+          <a href="shop.html" class="text-white hover:text-gray-600 my-4"
+            >Shop</a
+          >
+          <a href="#" class="text-white hover:text-gray-600 my-4">Blog</a>
+        </div>
+      </div>
+
+      <div class="first_pg">
+        <div class="flex h-full">
+          <div class="categories w-1/3 bg-white p-16">
+            <h1 class="text-4xl mb-4 font-bold">Categories</h1>
+            <div class="b1 mb-4">
+              <h2 class="text-2xl font-bold">Crystals</h2>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Gemstone</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Diamond</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="b2 mb-4">
+              <h2 class="text-2xl font-bold">Carats</h2>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Gold</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Platinum</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="b3 mb-4">
+              <h2 class="text-2xl font-bold">Products</h2>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Coin</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Biscuit</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Necklace</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Bracelet</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Bangles</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Earrings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Pendant</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Ring</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Mangalsutra</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Nosepin</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="b4 mb-4">
+              <h2 class="text-2xl font-bold">Bridal Special</h2>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Enchanting</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Trendsetter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Dazzling</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Elegant</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="b4 mb-4">
+              <h2 class="text-2xl font-bold">Occasional</h2>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Birthday</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                    >Anniversary</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Baby Birth</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Festive Gifts</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="b5 mb-4">
+              <h2 class="text-2xl font-bold">Personalized</h2>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >
+                    Jewellery Box</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="shop w-full h-full items-center pb-16">
+            <h1 class="bg-white w-full p-6 text-2xl font-bold mb-8 text-center">
+              Best Sellers
+            </h1>
+            <h3 class="text-xl ml-4 mb-4">
+              <a
+                class="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer"
+                href="shop.html"
+                >Shop</a
+              >> Products
+            </h3>
+            <!-- carousel starts here -->
+            <div
+              class="carousel relative h-[70%] w-full overflow-hidden blog1 grid grid-cols-4 gap-6 text-center"
+            >
+              <button
+                class="arrow left absolute top-1/2 transform -translate-y-1/2 bg-red-700 bg-opacity-90 p-2 text-white rounded-full cursor-pointer text-3xl font-extrabold border-none left-0 ml-1 hover:opacity-85"
+                onclick="showLeftSlide()"
+              >
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="0 0 180 180"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M119 47.3166C119 48.185 118.668 48.9532 118.003 49.6212L78.8385 89L118.003 128.379C118.668 129.047 119 129.815 119 130.683C119 131.552 118.668 132.32 118.003 132.988L113.021 137.998C112.356 138.666 111.592 139 110.729 139C109.865 139 109.101 138.666 108.436 137.998L61.9966 91.3046C61.3322 90.6366 61 89.8684 61 89C61 88.1316 61.3322 87.3634 61.9966 86.6954L108.436 40.002C109.101 39.334 109.865 39 110.729 39C111.592 39 112.356 39.334 113.021 40.002L118.003 45.012C118.668 45.68 119 46.4482 119 47.3166Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </button>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/coin_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Coin
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>50% off</h3>
+                </button>
+              </span>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/biscuit_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Biscuit
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>50% off</h3>
+                </button>
+              </span>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/necklace_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Necklace
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>50% off</h3>
+                </button>
+              </span>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/bracelet_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Bracelet
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>50% off</h3>
+                </button>
+              </span>
+
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/bangles_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Bangles
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>10% off</h3>
+                </button>
+              </span>
+
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/earings_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Earrings
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>50% off</h3>
+                </button>
+              </span>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/pendant_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Pendant
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>-50% off</h3>
+                </button>
+              </span>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/ring_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Ring
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>40% off</h3>
+                </button>
+              </span>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/mangal_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Mangalsutra
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>0% off</h3>
+                </button>
+              </span>
+              <span class="prod">
+                <img
+                  src="/Img_Vid/products/products_1/np_1.png"
+                  alt=""
+                  class="px-14 cursor-pointer"
+                />
+                <p
+                  class="text-2xl m-4 cursor-pointer hover:text-white delay-100"
+                >
+                  Nosepin
+                </p>
+                <button
+                  class="p-2 w-40 bg-gray-400 text-white shadow-xl hover:opacity-85"
+                >
+                  <h2 class="text-xl">Rs. 2500</h2>
+                  <h3>150% off</h3>
+                </button>
+              </span>
+
+              <button
+                class="arrow right absolute top-1/2 transform -translate-y-1/2 bg-red-700 bg-opacity-90 p-2 text-white rounded-full cursor-pointer text-3xl font-extrabold border-none m-0 right-0 hover:opacity-85"
+                onclick="showRightSlide()"
+              >
+                <svg
+                  width="30"
+                  height="30"
+                  class="rotate-180"
+                  viewBox="0 0 180 180"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M119 47.3166C119 48.185 118.668 48.9532 118.003 49.6212L78.8385 89L118.003 128.379C118.668 129.047 119 129.815 119 130.683C119 131.552 118.668 132.32 118.003 132.988L113.021 137.998C112.356 138.666 111.592 139 110.729 139C109.865 139 109.101 138.666 108.436 137.998L61.9966 91.3046C61.3322 90.6366 61 89.8684 61 89C61 88.1316 61.3322 87.3634 61.9966 86.6954L108.436 40.002C109.101 39.334 109.865 39 110.729 39C111.592 39 112.356 39.334 113.021 40.002L118.003 45.012C118.668 45.68 119 46.4482 119 47.3166Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer h-full w-full bg-[#D9D9D9]">
+        <div
+          class="container grid grid-cols-4 grid-rows-1 gap-4 items-center justify-between m-auto pt-5"
+        >
+          <div class="address">
+            <h1 class="text-2xl text-red-900">Address</h1>
+            <p>Crystal & Carats</p>
+            <p>Plot No 44, 45, Street Number 14,</p>
+            <p>Marol MIDC Industry Estate,</p>
+            <p>Andheri East, Mumbai-400093</p>
+          </div>
+          <div class="help">
+            <h1 class="text-2xl text-red-900">Help & Info</h1>
+            <p>About Crystal & Carats</p>
+            <p>Careers</p>
+            <p>Blogs</p>
+            <p>FAQs</p>
+          </div>
+          <div class="contact">
+            <h1 class="text-2xl text-red-900">Contact Us</h1>
+            <span>
+              <p>1809-908-5647</p>
+            </span>
+            <span>
+              <p>Get in touch</p>
+            </span>
+            <span>
+              <p>Chat with us</p>
+            </span>
+          </div>
+          <div class="links">
+            <h1 class="text-2xl text-red-900">Useful links</h1>
+            <p><a href="#">Privacy Policy</a></p>
+            <p>Terms of Use</p>
+            <p>Payment Issues</p>
+            <p>Net Banking</p>
+            <p>Custom Jewellry</p>
+          </div>
+          <div class="map relative">
+            <h1 class="text-2xl text-red-900">Location</h1>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.768876072758!2d77.7064133150817!3d28.98446198231592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e0d9e0d8e0d%3A0x4d8e0d8e0d8e0d8e!2sMeerut%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635361231234!5m2!1sen!2sin"
+              width="350"
+              height="200"
+              class="border-4 border-slate-400"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div
+          class="socialLinks flex justify-center text-center gap-10 items-center"
+        >
+          <h1 class="text-2xl text-red-800 font-bold">Follow Us on:</h1>
+          <a
+            class="fb relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-blue-700"
+            href="#"
+          >
+            <i class="fa-brands fa-facebook inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="insta relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-red-700"
+            href="#"
+          >
+            <i class="fa-brands fa-youtube inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="twitter relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-white"
+            href="#"
+          >
+            <i class="fa-brands fa-x-twitter inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="linkedin relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-green-600"
+            href="#"
+          >
+            <i class="fa-brands fa-whatsapp inset-0 hover:scale-125"></i>
+          </a>
+        </div>
+        <div
+          class="footer-bottom justify-center text-center bg-[#FED7BA] text-red-800 text-xl py-5 px-20"
+        >
+          <p>&copy; 2024 Fitness Club. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>
