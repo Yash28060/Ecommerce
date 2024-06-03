@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>gifts</title>
+  </head>
+  <body>
+    <div class="gifts_pg bg-[#FED7BA]">
+      <nav class="flex items-center justify-between px-4 py-4 text-xl">
+        <button
+          id="menuBtn"
+          class="block md:hidden text-white drop-shadow-lg focus:outline-none relative z-50"
+          onclick="toggleMenu()"
+        >
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="hidden md:block">
+          <a href="index.html" class="text-white hover:text-gray-600 mr-4"
+            >Home</a
+          >
+          <a href="#" class="text-white hover:text-gray-600 mr-4">Shop</a>
+          <a href="#" class="text-white hover:text-gray-600 mr-4">Blog</a>
+        </div>
+        <div class="flex items-center justify-center">
+          <!-- Logo in the middle -->
+          <div class="">
+            <img src="Img_Vid/logoimg.png" alt="Logo" class="h-16" />
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <!-- Add buttons for cart, like, and profile -->
+            <button class="text-white hover:text-red-500 mr-4 text-2xl">
+              <!-- Cart icon -->
+              <i class="fa-solid fa-heart"></i>
+            </button>
+            <button class="text-red-300 hover:text-blue-500 mr-4 text-2xl">
+              <!-- Like icon -->
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <button
+              class="join btn-open-popup text-purple-500 hover:text-gray-300 text-2xl"
+              onclick="togglePopup()"
+            >
+              <!-- Profile icon -->
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 hidden"
+        id="menu"
+      >
+        <div
+          class="flex flex-col items-center justify-center h-full text-4xl p-20 gap-10"
+        >
+          <a href="index.html" class="text-white hover:text-gray-600 my-4"
+            >Home</a
+          >
+          <a href="#" class="text-white hover:text-gray-600 my-4">Shop</a>
+          <a href="#" class="text-white hover:text-gray-600 my-4">Blog</a>
+        </div>
+      </div>
+      <div class="main_pg h-full">
+        <div
+          class="container_1 m-8 flex flex-wrap justify-center p-10 text-center items-center gap-6"
+        >
+          <div
+            class="c1 group bg-slate-400 p-4 cursor-pointer"
+            onclick="toggleCart()"
+          >
+            <img
+              src="Img_Vid/products/women/w1.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">Gold GentsGleam Ring</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c2 group bg-slate-400 p-4 cursor-pointer justify-center items-center  " onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w2.png"
+              alt=""
+              class="group-hover:opacity-85 m-auto delay-100"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl flex-wrap">BoldCraftsman geometric Ring </h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c3 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w3.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">TitianTrove Stylish Bracelet</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c4 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w4.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">Asetic ManlyGemForge</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container_2 m-8 flex flex-wrap justify-center p-10 text-center items-center gap-6"
+        >
+          <div class="c5 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w5.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer" 
+            >
+              <h1 class="group text-xl">ForgeFiness Gold Chain</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c6 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w6.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">PinnaclePendant Gold Chain</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c7 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w7.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">ApexArtisan Gold Pendant</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c8 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w8.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">ManlyGem Forge GOld Ring</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container_3 flex flex-wrap justify-center pt-10 mt-8 text-center items-center gap-6"
+        >
+          <div class="c9 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w9.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">Masculin Metal Gold Ring</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c10 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w10.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">Starlwart Styles Gold Chain</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c11 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w11.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">Elemental Elegance Pendant</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+          <div class="c12 group bg-slate-400 p-4 cursor-pointer" onclick="toggleCart()">
+            <img
+              src="Img_Vid/products/women/w12.png"
+              alt=""
+              class="group-hover:opacity-85 delay-100 m-auto"
+            />
+            <div
+              class="mt-2 p-6 group-hover:text-white delay-100 cursor-pointer"
+            >
+              <h1 class="group text-xl">Sovereign Stone Ring</h1>
+              <h3 class="text-[#4B04A6] mt-2">Rs 67800</h3>
+            </div>
+          </div>
+        </div>
+        <div class="container_4 pb-10">
+          <div class="p1 relative left-20 w-fit">
+            <img
+              src="Img_Vid/products/women/p1.png"
+              alt=""
+              class="relative h-20 top-10 -right-96 hover:scale-125 transition duration-3"
+            />
+
+            <div
+              class="items-center bg-[#D6CBCB] border-4 border-sky-500 w-fit p-12 rounded-md"
+            >
+              <h1 class="text-2xl font-bold mb-2">
+                Elite Embellish Gold and Diamond Ring
+              </h1>
+              <div class="text-xl">
+                <p>Discover elegance redefined with EliteEmbellish.</p>
+                <p>Elevate your style, embrace sophisitcation.</p>
+                <p>Unlock refined masculinity with EliteEmbellish.</p>
+                <p>Every piece tells a story of elegances.</p>
+              </div>
+            </div>
+          </div>
+          <div class="p2 relative -top-10 right-[-60%] w-fit">
+            <img
+              src="Img_Vid/products/men/p2.png"
+              alt=""
+              class="relative h-32 top-10 -left-12 hover:scale-125 transition duration-3"
+            />
+
+            <div
+              class="items-center bg-[#E0C4C4CC] border-4 border-sky-500 w-fit p-12 rounded-md"
+            >
+              <h1 class="text-2xl font-bold mb-2">
+                Indulge In Opulent Allure With Vista
+              </h1>
+              <div class="text-xl">
+                <p>Discover elegance redefined with EliteEmbellish.</p>
+                <p>Elevate your style, embrace sophisitcation.</p>
+                <p>Unlock refined masculinity with EliteEmbellish.</p>
+                <p>Every piece tells a story of elegances.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer h-full w-full bg-[#D9D9D9]">
+        <div
+          class="container grid grid-cols-4 grid-rows-1 gap-4 items-center justify-between m-auto pt-5"
+        >
+          <div class="address">
+            <h1 class="text-2xl text-red-900">Address</h1>
+            <p>Crystal & Carats</p>
+            <p>Plot No 44, 45, Street Number 14,</p>
+            <p>Marol MIDC Industry Estate,</p>
+            <p>Andheri East, Mumbai-400093</p>
+          </div>
+          <div class="help">
+            <h1 class="text-2xl text-red-900">Help & Info</h1>
+            <p>About Crystal & Carats</p>
+            <p>Careers</p>
+            <p>Blogs</p>
+            <p>FAQs</p>
+          </div>
+          <div class="contact">
+            <h1 class="text-2xl text-red-900">Contact Us</h1>
+            <span>
+              <p>1809-908-5647</p>
+            </span>
+            <span>
+              <p>Get in touch</p>
+            </span>
+            <span>
+              <p>Chat with us</p>
+            </span>
+          </div>
+          <div class="links">
+            <h1 class="text-2xl text-red-900">Useful links</h1>
+            <p><a href="#">Privacy Policy</a></p>
+            <p>Terms of Use</p>
+            <p>Payment Issues</p>
+            <p>Net Banking</p>
+            <p>Custom Jewellry</p>
+          </div>
+          <div class="map relative">
+            <h1 class="text-2xl text-red-900">Location</h1>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.768876072758!2d77.7064133150817!3d28.98446198231592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e0d9e0d8e0d%3A0x4d8e0d8e0d8e0d8e!2sMeerut%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635361231234!5m2!1sen!2sin"
+              width="350"
+              height="200"
+              class="border-4 border-slate-400"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div
+          class="socialLinks flex justify-center text-center gap-10 items-center"
+        >
+          <h1 class="text-2xl text-red-800 font-bold">Follow Us on:</h1>
+          <a
+            class="fb relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-blue-700"
+            href="#"
+          >
+            <i class="fa-brands fa-facebook inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="insta relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-red-700"
+            href="#"
+          >
+            <i class="fa-brands fa-youtube inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="twitter relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-white"
+            href="#"
+          >
+            <i class="fa-brands fa-x-twitter inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="linkedin relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-green-600"
+            href="#"
+          >
+            <i class="fa-brands fa-whatsapp inset-0 hover:scale-125"></i>
+          </a>
+        </div>
+        <div
+          class="footer-bottom justify-center text-center bg-[#FED7BA] text-red-800 text-xl py-5 px-20"
+        >
+          <p>&copy; 2024 Fitness Club. All Rights Reserved</p>
+        </div>
+      </div>
+      <!-- cart section -->
+      <div
+        id="cartOverlay"
+        class="fixed z-40 inset-0 bg-black bg-opacity-60 flex justify-center items-center opacity-0 scale-75 transform transition-all duration-300 pointer-events-none"
+      >
+        <div
+          class="popup-content bg-[#FED7BA] w-[60%] h-fit m-auto p-10 rounded-lg shadow-lg"
+        >
+          <div class="flex justify-end">
+            <button
+              class="close-btn text-2xl text-red-900 hover:text-red-500"
+              onclick="toggleCart()"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="flex justify-center items-center w-full">
+            <div class="img_left w-1/2">
+              <img
+                src="Img_Vid/products/women/w1.png"
+                alt="profile"
+                class="mb-4 w-[80%]"
+              />
+              <div class="btn">
+                <button
+                  class="bg-red-900 text-xl p-4 text-white rounded-full mb-2 hover:opacity-80 mr-8"
+                  onclick="toggleCartShop()"
+                >
+                  ADD TO CART
+                </button>
+                <button
+                  class="bg-red-900 text-xl p-4 text-white rounded-full mb-2 hover:opacity-80"
+                  onclick="toggleCartShop()"
+                >
+                  BUY NOW
+                </button>
+              </div>
+              <div class="tags grid grid-cols-2">
+                <span class="flex items-center text-center group">
+                  <i
+                    class="fa-solid fa-star cursor-pointer group-hover:text-red-500"
+                  ></i>
+                  <p class="ml-2 cursor-pointer group-hover:text-red-600">
+                    Trending Design
+                  </p>
+                </span>
+                <span class="flex items-center text-center group ml-2">
+                  <i
+                    class="fa-solid fa-tag cursor-pointer group-hover:text-red-500"
+                  ></i>
+                  <p class="ml-2 cursor-pointer group-hover:text-red-600">
+                    Best Prices
+                  </p>
+                </span>
+                <span class="flex items-center text-center group">
+                  <i
+                    class="fa-solid fa-circle-check cursor-pointer group-hover:text-red-500"
+                  ></i>
+                  <p class="ml-2 cursor-pointer group-hover:text-red-600">
+                    Easy Returns
+                  </p>
+                </span>
+              </div>
+            </div>
+            <div class="text_right w-1/2">
+              <h1 class="text-2xl">Crystals & Carats</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                explicabo, voluptas magnam amet delectus quod.
+              </p>
+              <div class="price_offers text-xl text-red-900">
+                <h1>Special Price</h1>
+                <div class="price flex flex-wrap items-center text-center">
+                  <h2 class="text-2xl text-red-900 mr-3">Rs 67800</h2>
+                  <p class="text-red-900 text-sm line-through mr-3">Rs 10000</p>
+                  <h3 class="text-xl text-red-900">25% off</h3>
+                </div>
+              </div>
+              <div class="rating flex flex-wrap text-center items-center">
+                <span
+                  class="flex items-center text-center group bg-red-800 rounded-full w-fit p-2 cursor-pointer"
+                >
+                  <p class="ml-2 cursor-pointer group-hover:text-white">4</p>
+                  <i
+                    class="fa-solid fa-star cursor-pointer group-hover:text-white"
+                  ></i>
+                </span>
+                <h3 class="text-gray-500">1500 ratings and 300 reviews</h3>
+              </div>
+              <div class="offers">
+                <h1 class="text-2xl text-red-900">Availabe offers</h1>
+                <div class="tags_offers">
+                  <span class="flex items-start text-start group">
+                    <i
+                      class="fa-solid fa-tag cursor-pointer group-hover:text-red-500 mt-1 mr-1"
+                    ></i>
+                    <p>
+                      Bank Offer 10% off on HDFC Bank Credit Card EMI
+                      Transactions, up to ₹1500 on orders of ₹7500 and above
+                      <span class="text-red-900 cursor-pointer">T&C</span>
+                    </p>
+                  </span>
+                  <span class="flex items-start text-start group">
+                    <i
+                      class="fa-solid fa-tag cursor-pointer group-hover:text-red-500 mt-1 mr-1"
+                    ></i>
+                    <p>
+                      Bank Offer 10% off on HDFC Bank Credit Card EMI
+                      Transactions, up to ₹1500 on orders of ₹7500 and above
+                      <span class="text-red-900 cursor-pointer">T&C</span>
+                    </p>
+                  </span>
+                  <span class="flex items-start text-start group">
+                    <i
+                      class="fa-solid fa-tag cursor-pointer group-hover:text-red-500 mt-1 mr-1"
+                    ></i>
+                    <p>
+                      Bank Offer 10% off on HDFC Bank Credit Card EMI
+                      Transactions, up to ₹1500 on orders of ₹7500 and above
+                      <span class="text-red-900 cursor-pointer">T&C</span>
+                      <br />
+                      <span class="text-red-900 cursor-pointer"
+                        >+5 more offers</span
+                      >
+                    </p>
+                  </span>
+                </div>
+              </div>
+              <div class="deliver">
+                <div class="d1 flex text-center items-center justify-around">
+                  <i
+                    class="fa-solid fa-magnifying-glass-location cursor-pointer"
+                  ></i>
+                  <p>Deliver to-</p>
+                  <input
+                    type="number"
+                    placeholder="Enter Pincode"
+                    class="bg-transparent border-b-2 border-black"
+                  />
+                  <button
+                    class="bg-red-900 p-2 rounded-full text-white hover:opacity-80"
+                  >
+                    check
+                  </button>
+                </div>
+                <div class="d2">
+                  <p>
+                    Deliver by 10 June, Thursday Free Delivery
+                    <span class="text-red-900 cursor-pointer"
+                      >T&C* applied</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="product_details">
+                <div class="p1 flex text-center items-center justify-around">
+                  <span>
+                    <label class="text-xl text-red-900">Product Details</label>
+                    <i class="fa-solid fa-angle-down cursor-pointer"></i>
+                  </span>
+                  <p class="text-gray-500">know your products authenticity</p>
+                </div>
+                <div class="p2 flex text-center items-center justify-around">
+                  <span>
+                    <label class="text-xl text-red-900">Read Reviews</label>
+                    <i class="fa-solid fa-angle-down cursor-pointer"></i>
+                  </span>
+                  <p class="text-gray-500">1500 ratings and 300 reviews</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- cart_shop section -->
+      <div
+        id="cartShopOverlay"
+        class="fixed z-50 inset-0 bg-black bg-opacity-60 flex justify-center items-center opacity-0 scale-75 transform transition-all duration-300 pointer-events-none"
+      >
+        <div
+          class="popup-content bg-[#FED7BA] w-fit h-fit m-auto p-10 rounded-lg shadow-lg"
+        >
+          <div class="flex justify-end">
+            <button
+              class="close-btn text-2xl text-red-900 hover:text-red-500"
+              onclick="toggleCartShop()"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="flex justify-center items-center w-full">
+            <div class="img_left w-1/2">
+              <img
+                src="Img_Vid/products/women/w1.png"
+                alt="profile"
+                class="mb-4 w-[80%]"
+              />
+              <div class="btn">
+                <button
+                  class="bg-red-900 text-xl p-4 text-white rounded-full mb-2 hover:opacity-80 mr-8"
+                >
+                  Remove from Cart
+                </button>
+                <button
+                  class="bg-red-900 text-xl p-4 text-white rounded-full mb-2 hover:opacity-80"
+                >
+                  Move to Wishlist
+                </button>
+              </div>
+            </div>
+            <div class="text_right">
+              <h1 class="text-2xl">Crystals & Carats</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                explicabo, voluptas magnam amet delectus quod.
+              </p>
+              <div class="price_offers text-xl text-red-900">
+                <h1>Special Price</h1>
+                <div class="price flex flex-wrap items-center text-center">
+                  <h2 class="text-2xl text-red-900 mr-3">Rs 67800</h2>
+                  <p class="text-red-900 text-sm line-through mr-3">Rs 10000</p>
+                  <h3 class="text-xl text-red-900">25% off</h3>
+                </div>
+              </div>
+              <div class="qantity bg-[#d45e5ec9] w-fit p-2 rounded-full my-2 cursor-pointer">
+                <label for="qty">Quantity</label>
+                <select id="cars" name="cars" class="bg-[#D27F7F80]">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+              <div class="offers">
+                <div class="tags_offers grid grid-cols-2 gap-2">
+                  <div
+                    class="flex justify-around rounded-md group bg-white items-center hover:opacity-85"
+                  >
+                    <i
+                      class="fa-solid fa-star-of-life cursor-pointer group-hover:text-red-500 mt-1 mr-1"
+                    ></i>
+                    <span>
+                      <p class="text-red-900 text-xl">Extra 10</p>
+                      <p class="text-red-900 text-sm">
+                        Save another 10000 on this order
+                      </p>
+                    </span>
+                    <span class="text-red-900 cursor-pointer">Apply</span>
+                  </div>
+                  <div
+                    class="flex justify-around rounded-md group bg-[#d45e5ec9] items-center hover:opacity-85"
+                  >
+                    <p class="text-white flex justify-between">
+                      <img src="Img_Vid/sbi.png" alt="" />
+                      5% instant discount on SBI Credit Cards...
+                    </p>
+                  </div>
+                  <div
+                    class="flex justify-around rounded-md group bg-white items-center p-2 hover:opacity-85"
+                  >
+                    <p class="text-red-900 text-xl">Apply More Coupons</p>
+                  </div>
+                  <div
+                    class="flex justify-around rounded-md group bg-[#d45e5ec9] items-center p-2 hover:opacity-85"
+                  >
+                    <p class="text-white text-xl">Bank Offers</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom flex justify-around mt-4">
+                <div class="deliver p-2">
+                  <div class="d1 flex text-center items-center justify-around">
+                    <i
+                      class="fa-solid fa-magnifying-glass-location cursor-pointer"
+                    ></i>
+                    <p>Deliver to-</p>
+                    <input
+                      type="number"
+                      placeholder="Enter Pincode"
+                      class="bg-transparent border-b-2 border-black"
+                    />
+                    <button
+                      class="bg-[#d45e5ec9] px-1 rounded-full text-white hover:opacity-80"
+                    >
+                      check
+                    </button>
+                  </div>
+                  <div class="d2 mt-2">
+                    <p class=" text-xl">
+                      Deliver by 10 June, Thursday
+                      <br />Free Delivery
+                      <span class="text-red-900 cursor-pointer"
+                        >T&C* applied</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="order_summary w-1/2 text-center">
+                  <h1 class="text-red-900 text-2xl">Order Summary</h1>
+                  <div class="os_details p-2">
+                    <span class="flex text-center justify-between">
+                      <p>SubTotal</p>
+                      <p>Rs 10000</p>
+                    </span>
+                    <span class="flex text-center justify-between">
+                      <p>Sale Discount</p>
+                      <p>Rs 2500</p>
+                    </span>
+                    <span class="flex text-center justify-between">
+                      <p>Coupon Discount</p>
+                      <p>Rs 500</p>
+                    </span>
+                    <span class="flex text-center justify-between">
+                      <p>Delivery Charge</p>
+                      <p>Free</p>
+                    </span>
+                    <span
+                      class="flex text-center justify-between text-xl mt-2 text-red-900"
+                    >
+                      <p>Total (incl of all taxex.)</p>
+                      <p>Rs 7000</p>
+                    </span>
+                    <span
+                      class="flex text-center justify-between text-green-400"
+                    >
+                      <p>You Saved</p>
+                      <p>+Rs 3000</p>
+                    </span>
+                    <button class=" bg-red-900 text-white p-3 hover:opacity-85 text-xl rounded-md mt-2">Proceed to Checkout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>

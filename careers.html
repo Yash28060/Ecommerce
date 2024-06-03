@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>Careers</title>
+  </head>
+  <body>
+    <div class="class_pg bg-[#FED7BA]">
+      <nav class="flex items-center justify-between px-4 py-4 text-xl">
+        <button
+          id="menuBtn"
+          class="block md:hidden text-white drop-shadow-lg focus:outline-none relative z-50"
+          onclick="toggleMenu()"
+        >
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="hidden md:block">
+          <a href="index.html" class="text-white hover:text-gray-600 mr-4"
+            >Home</a
+          >
+          <a href="shop.html" class="text-white hover:text-gray-600 mr-4"
+            >Shop</a
+          >
+          <a href="#" class="text-white hover:text-gray-600 mr-4">Blog</a>
+        </div>
+        <div class="flex items-center justify-center">
+          <!-- Logo in the middle -->
+          <div class="">
+            <img src="Img_Vid/logoimg.png" alt="Logo" class="h-16" />
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <!-- Add buttons for cart, like, and profile -->
+            <button class="text-white hover:text-red-500 mr-4 text-2xl">
+              <!-- Cart icon -->
+              <i class="fa-solid fa-heart"></i>
+            </button>
+            <button class="text-red-300 hover:text-blue-500 mr-4 text-2xl">
+              <!-- Like icon -->
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <button
+              class="join btn-open-popup text-purple-500 hover:text-gray-300 text-2xl"
+              onclick="togglePopup()"
+            >
+              <!-- Profile icon -->
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 hidden"
+        id="menu"
+      >
+        <div
+          class="flex flex-col items-center justify-center h-full text-4xl p-20 gap-10"
+        >
+          <a href="index.html" class="text-white hover:text-gray-600 my-4"
+            >Home</a
+          >
+          <a href="shop.html" class="text-white hover:text-gray-600 my-4"
+            >Shop</a
+          >
+          <a href="#" class="text-white hover:text-gray-600 my-4">Blog</a>
+        </div>
+      </div>
+
+      <div class="first_pg">
+        <div class="flex h-full w-full">
+          <div class="info w-1/5 bg-white p-4 pl-12">
+            <h1 class="text-3xl text-red-900 my-6">Help & Info</h1>
+            <div class="b1">
+              <h2 class="mb-4">
+                <a
+                  href="about_us.html"
+                  class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >About Us</a
+                >
+              </h2>
+              <h2 class="text-2xl text-red-900 mb-4 cursor-pointer">Careers</h2>
+              <h2 class="mb-4">
+                <a
+                  href="blogs.html"
+                  class="relative after:bg-red-500 after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-[80%] after:transition-all after:duration-300 hover:text-gray-600 cursor-pointer text-xl"
+                  >Blogs</a
+                >
+              </h2>
+              <!-- Dropdown menu -->
+              <div class="dw">
+                <div class="group absolute">
+                  <button class="text-2xl rounded inline-flex items-center">
+                    <span>FAQs</span>
+                    <svg
+                      class="fill-current w-6 h-6 ml-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M5.23 7.21a.75.75 0 011.06-.02L10 10.66l3.71-3.47a.75.75 0 111.04 1.08l-4 3.75a.75.75 0 01-1.04 0l-4-3.75a.75.75 0 01-.02-1.06z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="hidden text-gray-700 pt-1 group-hover:block group-delay-300"
+                  >
+                    <li>
+                      <a
+                        class="bg-gray-200 hover:bg-gray-400 hover:text-white py-2 px-4 block whitespace-no-wrap"
+                        href="#"
+                        >Login & Action</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap hover:text-white"
+                        href="#"
+                        >Refund & Pickup
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="bg-gray-200 hover:bg-gray-400 hover:text-white py-2 px-4 block whitespace-no-wrap"
+                        href="#"
+                        >Delivery
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="bg-gray-200 hover:bg-gray-400 hover:text-white py-2 px-4 block whitespace-no-wrap"
+                        href="#"
+                        >Cancellation
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Right_Side w-[75%] p-4 m-auto bg-white pb-16">
+            <h1 class="bg-[#D27F7F80] p-6 text-4xl font-bold mb-2 text-center">
+              Want to start your career with Crystals & Carts
+            </h1>
+            <div class="p1 p-4">
+              <p class="text-xl m-auto py-6 tracking-wider">
+                Welcome to Crystal & Carats Jewelry, where jewelry tells
+                stories, and craftsmanship is an art. If you're passionate about
+                creating meaningful pieces in a collaborative and creative
+                environment, join us! We're always looking for talented
+                individuals who share our vision and values.
+              </p>
+            </div>
+            <div class="p2 p-4">
+              <h1 class="text-3xl font-medium">Why Crystals & Carats</h1>
+              <ul class="list-decimal px-10">
+                <div class="l1">
+                  <li class="text-2xl font-medium m-auto py-6 tracking-wider">
+                    Artisanal Excellence:
+                  </li>
+                  <p class="text-xl m-auto pb-4 tracking-wider">
+                    Be part of our legacy of handcrafted excellence, where each
+                    piece is a unique masterpiece.
+                  </p>
+                </div>
+                <div class="l2">
+                  <li class="text-2xl font-medium m-auto py-6 tracking-wider">
+                    Creative Innovation:
+                  </li>
+                  <p class="text-xl m-auto pb-4 tracking-wider">
+                    Express your creativity in a supportive environment that
+                    values originality and fresh perspectives.
+                  </p>
+                </div>
+                <div class="l3">
+                  <li class="text-2xl font-medium m-auto py-6 tracking-wider">
+                    Commitment to Quality:
+                  </li>
+                  <p class="text-xl m-auto pb-4 tracking-wider">
+                    Join a team dedicated to crafting high-quality jewelry that
+                    exceeds expectations.
+                  </p>
+                </div>
+              </ul>
+            </div>
+            <div class="p3 p-4">
+              <h1 class="text-3xl font-medium">Current Openings:</h1>
+              <ul class="list-decimal px-10">
+                <div class="l1">
+                  <li class="text-2xl font-medium m-auto py-6 tracking-wider">
+                    Jewellry Artisan:
+                  </li>
+                  <p class="text-xl m-auto pb-4 tracking-wider">
+                    Bring designs to life with precision and care, showcasing
+                    your love for detail.
+                  </p>
+                </div>
+                <div class="l2">
+                  <li class="text-2xl font-medium m-auto py-6 tracking-wider">
+                    Creative Designer:
+                  </li>
+                  <p class="text-xl m-auto pb-4 tracking-wider">
+                    Contribute to our collection with your innovative and
+                    artistic vision.
+                  </p>
+                </div>
+                <div class="l3">
+                  <li class="text-2xl font-medium m-auto py-6 tracking-wider">
+                    Quality Assurance Specialist:
+                  </li>
+                  <p class="text-xl m-auto pb-4 tracking-wider">
+                    Ensure every piece meets our uncompromising standards for
+                    excellence.
+                  </p>
+                </div>
+                <div class="l4">
+                  <li class="text-2xl font-medium m-auto py-6 tracking-wider">
+                    Customer Care Advocate:
+                  </li>
+                  <p class="text-xl m-auto pb-4 tracking-wider">
+                    Share your passion for jewelry, providing exceptional
+                    service to help customers find their perfect piece.
+                  </p>
+                </div>
+              </ul>
+            </div>
+            <div class="p4 p-4">
+              <h1 class="text-3xl font-medium">
+                How To Apply:
+              </h1>
+              <p class="text-2xl m-auto py-6 tracking-wider">
+                Ready to craft moments that last a lifetime? Send your resume and a cover letter to careers@crystalandcarats.com.
+              </p>
+            </div>
+            <div class="p4 p-4">
+              <h1 class="text-2xl font-medium">
+                Join Crystal and Carats - Where Tradition Meets Innovation!
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer h-full w-full bg-[#D9D9D9]">
+        <div
+          class="container grid grid-cols-4 grid-rows-1 gap-4 items-center justify-between m-auto pt-5"
+        >
+          <div class="address">
+            <h1 class="text-2xl text-red-900">Address</h1>
+            <p>Crystal & Carats</p>
+            <p>Plot No 44, 45, Street Number 14,</p>
+            <p>Marol MIDC Industry Estate,</p>
+            <p>Andheri East, Mumbai-400093</p>
+          </div>
+          <div class="help">
+            <h1 class="text-2xl text-red-900">Help & Info</h1>
+            <p>About Crystal & Carats</p>
+            <p>Careers</p>
+            <p>Blogs</p>
+            <p>FAQs</p>
+          </div>
+          <div class="contact">
+            <h1 class="text-2xl text-red-900">Contact Us</h1>
+            <span>
+              <p>1809-908-5647</p>
+            </span>
+            <span>
+              <p>Get in touch</p>
+            </span>
+            <span>
+              <p>Chat with us</p>
+            </span>
+          </div>
+          <div class="links">
+            <h1 class="text-2xl text-red-900">Useful links</h1>
+            <p><a href="#">Privacy Policy</a></p>
+            <p>Terms of Use</p>
+            <p>Payment Issues</p>
+            <p>Net Banking</p>
+            <p>Custom Jewellry</p>
+          </div>
+          <div class="map relative">
+            <h1 class="text-2xl text-red-900">Location</h1>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.768876072758!2d77.7064133150817!3d28.98446198231592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e0d9e0d8e0d%3A0x4d8e0d8e0d8e0d8e!2sMeerut%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635361231234!5m2!1sen!2sin"
+              width="350"
+              height="200"
+              class="border-4 border-slate-400"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div
+          class="socialLinks flex justify-center text-center gap-10 items-center"
+        >
+          <h1 class="text-2xl text-red-800 font-bold">Follow Us on:</h1>
+          <a
+            class="fb relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-blue-700"
+            href="#"
+          >
+            <i class="fa-brands fa-facebook inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="insta relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-red-700"
+            href="#"
+          >
+            <i class="fa-brands fa-youtube inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="twitter relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-white"
+            href="#"
+          >
+            <i class="fa-brands fa-x-twitter inset-0 hover:scale-125"></i>
+          </a>
+          <a
+            class="linkedin relative z-1 mb-0 p-2 text-2xl rounded-full transition duration-300 hover:text-green-600"
+            href="#"
+          >
+            <i class="fa-brands fa-whatsapp inset-0 hover:scale-125"></i>
+          </a>
+        </div>
+        <div
+          class="footer-bottom justify-center text-center bg-[#FED7BA] text-red-800 text-xl py-5 px-20"
+        >
+          <p>&copy; 2024 Fitness Club. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>
