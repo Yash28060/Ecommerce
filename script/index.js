@@ -51,37 +51,8 @@ function toggleForms(formType) {
 }
 
 // carousel starts here //
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-
-function showSlide(index) {
-  slides.forEach((slide) => slide.classList.add('hidden'));
-  slides[index].classList.remove('hidden');
-}
-
-function showNextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}
-
-function showPrevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(currentIndex);
-}
-
-function startCarousel() {
-  showSlide(currentIndex);
-  setInterval(showNextSlide, 4000);
-}
-startCarousel();  
-
-// window.addEventListener('load', startCarousel);
-
 // Default to showing login form
-toggleForms('login');
-
+toggleForms('login'); 
 // window.onload = function() {
 //   setTimeout(togglePopup, 4000); // 5000 milliseconds = 5 seconds
 // };

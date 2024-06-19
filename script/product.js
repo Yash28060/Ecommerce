@@ -67,6 +67,30 @@ function toggleCartShop() {
     }, 300);
   }
 }
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.add('hidden'));
+  slides[index].classList.remove('hidden');
+}
+
+function showNextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+function showPrevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+function startCarousel() {
+  showSlide(currentIndex);
+  setInterval(showNextSlide, 4000);
+}
+startCarousel(); 
 
 window.addEventListener('load', showProd);
